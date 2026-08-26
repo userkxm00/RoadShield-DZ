@@ -14,6 +14,14 @@ Detect and aggregate road hazards and abnormal road-surface signals, build a liv
 - **Target:** Label Projet Innovant
 - **Primary outcome:** A credible, testable MVP and a strong innovation dossier
 
+## Start here
+
+- [`docs/MASTER_PLAN_V1.md`](docs/MASTER_PLAN_V1.md) — authoritative product, research, architecture, MVP, validation, and competition plan.
+- [`docs/GATE_REGISTRY.md`](docs/GATE_REGISTRY.md) — authoritative stage-gate sequence and acceptance rules.
+- [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) — current gate and execution status.
+- [`CODEX.md`](CODEX.md) — Codex execution contract and scope rules.
+- [`PROJECT_CONSTITUTION.md`](PROJECT_CONSTITUTION.md) — non-negotiable project principles.
+
 ## Core MVP thesis
 
 RoadShield does **not** attempt to replace navigation products or official crash-reporting systems. It adds a preventative, field-sourced intelligence layer based on:
@@ -35,10 +43,12 @@ RoadShield does **not** attempt to replace navigation products or official crash
 6. Every major architectural decision must be documented.
 7. Do not claim that RoadShield can guarantee accident prevention.
 8. Build the smallest demonstrable system first, then expand.
+9. Codex is the implementation agent; product and architecture decisions require human approval.
+10. A gate is not passed by documentation alone; acceptance evidence must exist.
 
 ## Planned repository areas
 
-- `docs/` — product, research, architecture, competition, decisions
+- `docs/` — product, research, architecture, competition, decisions, testing, and security
 - `apps/` — user-facing applications
 - `services/` — backend and risk processing services
 - `packages/` — shared contracts and utilities
@@ -47,4 +57,4 @@ RoadShield does **not** attempt to replace navigation products or official crash
 
 ## Status
 
-**Foundation initialized. No production application code has been added yet.**
+**Phase 1 — Research & Innovation.** Foundation documents are in place; Gate 1 remains open until the research/feasibility evidence is complete and reviewed.
