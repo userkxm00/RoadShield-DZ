@@ -1,143 +1,36 @@
 # RoadShield DZ — Gate Registry
 
-This file is the authoritative list of stage gates. A gate may be marked PASS only when its acceptance evidence exists in GitHub and the main branch has been verified after merge.
+## Gate model
 
-## Gate sequence
+A phase advances only when its acceptance evidence has been produced, reviewed, and the resulting repository state has been verified on `main`.
 
-### G0 — Repository Foundation
-**Purpose:** Establish project constitution, product baseline, engineering rules, security/test strategy, Git workflow, and Codex contract.
+| Gate | Phase | Purpose | Status |
+|---|---|---|---|
+| G0 | Project Foundation | Establish product, engineering, security, Git, Codex, and gate governance | **PASS** |
+| G1 | Research & Innovation | Prove problem, differentiation, MVP feasibility, and research direction | **IN PROGRESS** |
+| G2 | Architecture & Technical Specification | Finalize stack, contracts, data model, security/privacy model | **BLOCKED BY G1** |
+| G3 | MVP Core | Build bounded sensor-to-event-to-map core | **BLOCKED BY G2** |
+| G4 | Intelligence | Add and quantify sensor fusion / local AI where justified | **BLOCKED BY G3** |
+| G5 | Safety / Privacy / Security | Harden product and verify safety/security posture | **BLOCKED BY MVP BASELINE; CONTINUOUS THEREAFTER** |
+| G6 | Field Validation | Validate the real-world hypothesis with controlled experiments | **BLOCKED BY G3 + G5** |
+| G7 | Competition Package | Prepare Label and competition materials from verified evidence | **BLOCKED BY G6 + LABEL READINESS** |
 
-**Required evidence**
-- Foundation documents present and internally consistent.
-- Repository structure defined.
-- Definition of Done documented.
-- Git workflow documented.
-- Codex instructions documented.
-- No premature production implementation.
+## G0 evidence
 
-**Status:** In progress — final consistency audit required.
+- `docs/FOUNDATION_GATE_CHECKLIST.md`
+- `docs/engineering/FOUNDATION_AUDIT_2026-08-26.md`
 
-### G1 — Research & Innovation
-**Purpose:** Establish a defensible problem statement, competitive boundary, innovation hypothesis, MVP boundary, and feasibility evidence.
+## G1 evidence set
 
-**Required evidence**
-- Official source register.
-- Competitor matrix.
-- Innovation differentiation.
-- IP/prior-art hypothesis.
-- Controlled field-validation protocol.
-- Feasibility evidence.
-- Decision: continue, narrow, or revise.
+- `docs/research/PROBLEM_EVIDENCE.md`
+- `docs/research/COMPETITIVE_LANDSCAPE.md`
+- `docs/research/RESEARCH_AND_INNOVATION.md`
+- `docs/research/RESEARCH_EVIDENCE_2026.md`
+- `docs/research/FIELD_VALIDATION_PROTOCOL_V1.md`
+- `docs/research/GATE_1_ACCEPTANCE.md`
+- GitHub Issue #1 — controlled field validation
+- GitHub Issue #2 — controlled validation harness
 
-**Status:** In progress.
+## Non-negotiable rule
 
-### G2 — Technical Architecture
-**Purpose:** Freeze the MVP technical design before broad implementation.
-
-**Required evidence**
-- Technology stack.
-- System architecture.
-- Data model.
-- API contracts.
-- Event taxonomy.
-- Threat model.
-- Privacy model.
-- Test/replay strategy.
-- ADRs for major decisions.
-
-**Status:** Blocked by G1.
-
-### G3 — MVP Core
-**Purpose:** Build and verify the minimum end-to-end product loop.
-
-**Required evidence**
-- Sensor capture.
-- Candidate event detection.
-- Geospatial binding.
-- Backend ingestion.
-- Storage.
-- Corroboration.
-- Confidence model.
-- Dashboard/map.
-- Passing automated checks.
-
-**Status:** Blocked by G2.
-
-### G4 — Intelligence
-**Purpose:** Add measurable intelligence only after the deterministic baseline works.
-
-**Required evidence**
-- Baseline versus enhanced model comparison.
-- Versioned models/algorithms.
-- Resource/battery impact.
-- Reproducible tests.
-
-**Status:** Blocked by G3.
-
-### G5 — Safety / Privacy / Security
-**Purpose:** Ensure the product can be demonstrated and tested responsibly.
-
-**Required evidence**
-- Threat model review.
-- Privacy review.
-- Security tests.
-- Safety UX/copy review.
-- No critical unresolved issues.
-
-**Status:** Continuous; mandatory before field demonstration and competition submission.
-
-### G6 — Field Validation
-**Purpose:** Prove that the core system behaves consistently in real conditions.
-
-**Required evidence**
-- Sanitized dataset.
-- Experiment log.
-- Repeatability results.
-- Localization error.
-- False-positive/false-negative observations where measurable.
-- Battery/data observations.
-- Limitations and decision.
-
-**Status:** Blocked by G3 and required safety controls.
-
-### G7 — Competition Package
-**Purpose:** Produce a submission-ready product and evidence package.
-
-**Required evidence**
-- Prototype.
-- Pitch deck.
-- One-pager.
-- Demo script.
-- Competition matrix.
-- Innovation statement.
-- Business model.
-- Impact metrics.
-- Founder CV.
-- Label-ready materials.
-- Final consistency audit.
-
-**Status:** Blocked by validated prototype and Label readiness.
-
-## Gate protocol
-
-```text
-Task definition
-  ↓
-Implementation / research
-  ↓
-Automated verification
-  ↓
-Artifact / evidence
-  ↓
-Human review
-  ↓
-PR
-  ↓
-Merge
-  ↓
-origin/main verification
-  ↓
-Gate decision
-```
-
-No gate is considered passed from prose alone.
+A green documentation checklist is not enough to pass a research gate. Research gates require external evidence, such as reproducible experiments or an explicit hypothesis revision based on observed failure.
