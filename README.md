@@ -19,6 +19,11 @@ Detect and aggregate road hazards and abnormal road-surface signals, build a liv
 - [`docs/MASTER_PLAN_V1.md`](docs/MASTER_PLAN_V1.md) — authoritative product, research, architecture, MVP, validation, and competition plan.
 - [`docs/GATE_REGISTRY.md`](docs/GATE_REGISTRY.md) — authoritative stage-gate sequence and acceptance rules.
 - [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) — current gate and execution status.
+- [`docs/FOUNDATION_GATE_CHECKLIST.md`](docs/FOUNDATION_GATE_CHECKLIST.md) — final Phase 0 verification record.
+- [`docs/engineering/GIT_WORKFLOW.md`](docs/engineering/GIT_WORKFLOW.md) — branch, PR, merge, and main-verification workflow.
+- [`docs/engineering/CODING_STANDARDS.md`](docs/engineering/CODING_STANDARDS.md) — engineering conventions.
+- [`docs/engineering/DEFINITION_OF_DONE.md`](docs/engineering/DEFINITION_OF_DONE.md) — task completion standard.
+- [`docs/testing/TESTING_STRATEGY.md`](docs/testing/TESTING_STRATEGY.md) — test layers and evidence rules.
 - [`CODEX.md`](CODEX.md) — Codex execution contract and scope rules.
 - [`PROJECT_CONSTITUTION.md`](PROJECT_CONSTITUTION.md) — non-negotiable project principles.
 
@@ -49,12 +54,12 @@ RoadShield does **not** attempt to replace navigation products or official crash
 ## Planned repository areas
 
 - `docs/` — product, research, architecture, competition, decisions, testing, and security
-- `apps/` — user-facing applications
-- `services/` — backend and risk processing services
-- `packages/` — shared contracts and utilities
-- `tests/` — automated and scenario tests
+- `apps/` — user-facing applications, introduced after Phase 2
+- `services/` — backend and risk processing services, introduced after Phase 2
+- `packages/` — shared contracts and utilities, introduced with the selected stack
+- `tests/` — automated and scenario tests, introduced with implementation
 - `.github/` — CI and contribution workflow
 
 ## Status
 
-**Phase 1 — Research & Innovation.** Foundation documents are in place; Gate 1 remains open until the research/feasibility evidence is complete and reviewed.
+**Phase 1 — Research & Innovation.** Phase 0 Foundation Gate has passed document consistency review. Gate 1 remains open until research and controlled feasibility evidence are complete and reviewed.
