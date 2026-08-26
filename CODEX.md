@@ -1,46 +1,68 @@
 # RoadShield DZ — Codex Execution Contract
 
 ## Mission
+Implement RoadShield DZ according to the repository constitution, project requirements, architecture decisions, research evidence, and gate criteria. Optimize for correctness, evidence, safety, privacy, and reviewability — not code volume.
 
-Implement RoadShield DZ according to the repository constitution, project requirements, architecture decisions, and gate criteria. Optimize for correctness, evidence, safety, privacy, and reviewability — not code volume.
+## Required reading order
+Before any substantial coding task, Codex MUST read:
+1. `PROJECT_CONSTITUTION.md`
+2. `ROADMAP.md`
+3. the relevant documents under `docs/`
+4. the current repository state and recent commits
 
-## Required behavior
+If a requirement conflicts with another document, STOP and report the conflict. Do not silently choose.
 
-Before any substantial coding task:
+## Current execution state
+The repository is in **Gate 1 — Research & Innovation Definition**.
 
-- Read `PROJECT_CONSTITUTION.md`.
-- Read the relevant documents under `docs/`.
-- Inspect the current branch and repository state.
-- Identify the exact acceptance criteria.
-- Do not invent requirements that are not documented or explicitly requested.
+Codex must NOT start application implementation until Gate 1 is explicitly accepted by the repository owner.
+
+## Gate 1 task
+Codex's immediate task is documentation/research support only:
+- inspect current docs;
+- identify contradictions, missing acceptance criteria, or unsupported claims;
+- propose concrete refinements as a small documentation change;
+- create no production application code unless explicitly authorized.
 
 ## Change discipline
-
 - Make the smallest coherent change that satisfies the task.
 - Do not perform opportunistic rewrites.
-- Do not introduce a new framework or dependency without documenting the rationale.
+- Do not introduce a framework or dependency without documenting the rationale.
 - Do not add paid AI/API services to the MVP core.
-- Never commit secrets, credentials, API keys, device identifiers, or personal data.
+- Never commit secrets, credentials, API keys, device identifiers, raw personal data, or production telemetry.
 - Preserve privacy-by-design requirements.
+- Never silently widen MVP scope.
 
 ## Testing discipline
-
-Every behavior change requires relevant tests. Prefer unit tests for deterministic logic and integration tests for boundaries. For sensor/geospatial features, also maintain a deterministic fixture/simulation path so behavior can be verified without a physical vehicle.
+Every behavior change requires relevant tests. Prefer unit tests for deterministic logic and integration tests for boundaries. For sensor/geospatial features, maintain deterministic fixtures/replay so behavior can be verified without a physical vehicle.
 
 ## Safety discipline
+Never implement language or UI that implies guaranteed accident prediction or guaranteed protection. Risk scores must expose their basis and uncertainty. RoadShield is decision support, not autonomous control.
 
-Never implement language or UI that implies guaranteed accident prediction or guaranteed protection. Any risk score must explain its basis and uncertainty.
+## Evidence discipline
+Every public-facing quantitative claim must be traceable to:
+- an official source;
+- a RoadShield measurement;
+- a clearly labelled hypothesis/target;
+- or a clearly labelled estimate.
+
+Never manufacture benchmark results, user counts, accuracy, savings, or accident-reduction claims.
 
 ## Completion report
-
 For every task, report:
-
 1. What changed.
 2. Files changed.
 3. Tests/checks run and results.
 4. Known limitations.
-5. Any assumptions or decisions that should be documented.
+5. Assumptions and decisions requiring documentation.
+6. Gate status and whether any acceptance criterion remains unresolved.
 
 ## Gate discipline
+Do not begin the next gate automatically when the current gate has unresolved acceptance criteria. The repository owner must review and merge work in small, understandable units.
 
-Do not begin the next gate automatically when the current gate has unresolved acceptance criteria. The repository owner must be able to review and merge work in small, understandable units.
+## Git discipline
+- Work on a dedicated feature branch when implementation is authorized.
+- Keep commits small and semantically named.
+- Never force-push or rewrite shared history.
+- Do not merge work into `main` without passing the repository's defined gate checks.
+- Never commit generated credentials, local environment files containing secrets, or large test artifacts unless explicitly required.
